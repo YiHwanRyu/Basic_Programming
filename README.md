@@ -9,3 +9,5 @@
  3. calculating of numbers, maximum, minimum
  
  4. printf, scanf examples
+
+ 5. exchange project  
