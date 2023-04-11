@@ -1,5 +1,6 @@
 #include<stdio.h>
 int main () {
+	// git encoding 수정 
 	int number;
 	printf("몇 단을 보시겠습니까? : ");
  	scanf("%d" , &number);
@@ -7,4 +8,4 @@ int main () {
 		printf("%d x %d = %d\n", number, i, number * i);
 	} 
 	return 0;
-}
+} 
