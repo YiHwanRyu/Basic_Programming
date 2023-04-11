@@ -1,5 +1,6 @@
 #include<stdio.h>
 int main() {
+	// git encoding 수정 
 	int number, inputNumber, wantNumber;
 	bool eraseSpace = false;
 	printf("한줄에 몇개? : ");
