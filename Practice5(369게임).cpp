@@ -1,6 +1,7 @@
 #include<stdio.h>
 #include<string>
 #include<iostream>
+#include<windows.h>
 using namespace std;
 int main() {
 	// git encoding ¼öÁ¤ 
@@ -11,8 +12,10 @@ int main() {
 		bool flag = false;
 		string stringNumber = to_string(i);
 		for (int j = 0; j < stringNumber.length(); j++) {
+			Sleep(400);
 			if (stringNumber[j] == '3' || stringNumber[j] == '6' || stringNumber[j] == '9') {
 				cout << "Â¦";
+				Beep(380, 70);
 				flag = true;
 			}
 		}
