@@ -2,11 +2,16 @@
 #include<iostream>
 #include<string>
 #include<stdlib.h>
+#include<time.h>
 using namespace std;
 int main() {
-	const int YEAR = 2023;
-	const int MONTH = 4;
-	const int DAY = 11;
+	time_t timeNow;
+	struct tm* timeNowChange;
+	timeNow = time(NULL);
+	timeNowChange = localtime(&timeNow);
+	int year = timeNowChange -> tm_year + 1900;
+	int month = timeNowChange -> tm_mon + 1;
+	int day = timeNowChange -> tm_mday;
 	int age;
 	string ageRaw = "";
 	string personNumber = "";
@@ -24,10 +29,10 @@ int main() {
 		age = 2023 - atoi(ageRaw.c_str());
 	}
 	
-	if (MONTH < atoi(personNumber.substr(2, 2).c_str())) {
+	if (month < atoi(personNumber.substr(2, 2).c_str())) {
 		age--;
-	} else if(MONTH == atoi(personNumber.substr(2, 2).c_str()))  {
-		if(DAY <= atoi(personNumber.substr(4, 2).c_str())) {
+	} else if(month == atoi(personNumber.substr(2, 2).c_str()))  {
+		if(day <= atoi(personNumber.substr(4, 2).c_str())) {
 			age--;
 		}
 	}
