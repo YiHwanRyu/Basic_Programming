@@ -26,8 +26,19 @@ void printExchangeResult (float exchangeRate, int menuNumber, int exchangeResult
 	} else if (menuNumber == 5) {
 		printf("파운드 : %d파운드\n", exchangeResult);
 	} 
-	printf("거스름돈 : %d원\n", changeResult);
+	int changeResult1000 = changeResult / 1000;	
+	int changeResult500 = (changeResult - changeResult1000 * 1000) / 500;
+	int changeResult100 = (changeResult - changeResult1000 * 1000 - changeResult500 * 500) / 100;
+	int changeResult50 = (changeResult - changeResult1000 * 1000 - changeResult500 * 500 - changeResult100 * 100) / 50;
+	int changeResult10 = (changeResult - changeResult1000 * 1000 - changeResult500 * 500 - changeResult100 * 100 - changeResult50 * 50) / 10;
+	printf("거스름돈 : total  %d원\n", changeResult);
+	printf("           1000 * %d원\n", changeResult1000);
+	printf("           500  * %d원\n", changeResult500);
+	printf("           100  * %d원\n", changeResult100);
+	printf("            50  * %d원\n", changeResult50);
+	printf("            10  * %d원\n", changeResult10);
 }
+
 int main() {
 	int moneyOfCustomer, menuChoice, exchangeResult;
 	float exchangeRate, exchange, changeResult;
