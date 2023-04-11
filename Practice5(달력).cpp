@@ -1,5 +1,6 @@
 #include<stdio.h>
 int main() {
+	// git encoding ¼öÁ¤ 
 	int year, month, days = 0, startDay;
 	bool leapYear = false; 
 	int monthDays[12] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
