@@ -3,6 +3,7 @@
 #include<iostream>
 using namespace std;
 int main() {
+	// git encoding 수정 
 	int putNumber;
 	cout << "숫자 몇까지 할까요? ";
 	cin >> putNumber;
