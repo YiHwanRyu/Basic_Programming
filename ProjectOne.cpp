@@ -17,6 +17,46 @@ const float  DIFFICULTY_DISCOUNT_RATE = 0.6, MERIT_DISCOUNT_RATE = 0.5,
 			MULTIPLE_KIDS_DISCOUNT_RATE = 0.8, PREGNANT_DISCOUNT_RATE = 0.85;
 const int MAX_TICKET_COUNT = 10, MIN_TICKET_COUNT = 1;
 
+void printChoiceTicket();
+void printInputPersonNumber();
+void printInputTicketNumbers();
+void printSpecialOffers();
+void printMoreChoiceTicket();
+int func_inputPersonNumber (string *inputPersonNumber);
+int inputNumberChoiceTicket();
+string inputPersonNumber();
+int inputTicketNumbers();
+int inputSpecialOffers();
+void inputData(int *numberChoiceTicket, string *personNumber, 
+			   int *ticketNumbers, int *specialOffers); 
+			   
+int main() {
+	int numberChoiceTicket;
+	string personNumber = "";
+	int ticketNumbers;
+	int specialOffers;
+	int moreChoiceTicket;
+	int isExit;
+	int age;
+
+	do {	
+		while (true) { 
+			inputData(&numberChoiceTicket, &personNumber, &ticketNumbers, &specialOffers);
+			cout << numberChoiceTicket << " : " << personNumber << " : " << ticketNumbers << " : " << specialOffers << "\n";
+			printMoreChoiceTicket();
+			scanf("%d" , &moreChoiceTicket);
+			if (moreChoiceTicket == 2) {
+				break;
+			}		
+		}
+		printf("Continue? (1: New Order, 2: Exit Program) : ");
+		scanf("%d", &isExit);	
+				
+	} while (isExit == 1);
+	
+	return 0;
+}
+
 void printChoiceTicket() {
 	printf("\n%s\n", "Welcome to PolyLand!!");
 	printf("%s\n", "Choose your type of ticket!");
@@ -109,30 +149,3 @@ void inputData(int *numberChoiceTicket, string *personNumber,
 		   	
 }
 
-
-int main() {
-	int numberChoiceTicket;
-	string personNumber = "";
-	int ticketNumbers;
-	int specialOffers;
-	int moreChoiceTicket;
-	int isExit;
-	int age;
-
-	do {	
-		while (true) { 
-			inputData(&numberChoiceTicket, &personNumber, &ticketNumbers, &specialOffers);
-			//cout << numberChoiceTicket << " : " << personNumber << " : " << ticketNumbers << " : " << specialOffers << "\n";
-			printMoreChoiceTicket();
-			scanf("%d" , &moreChoiceTicket);
-			if (moreChoiceTicket == 2) {
-				break;
-			}		
-		}
-		printf("Continue? (1: New Order, 2: Exit Program) : ");
-		scanf("%d", &isExit);	
-				
-	} while (isExit == 1);
-	
-	return 0;
-}
