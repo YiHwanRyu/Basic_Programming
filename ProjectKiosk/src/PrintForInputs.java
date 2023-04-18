@@ -37,5 +37,9 @@ public class PrintForInputs {
 	void printIsExit() {
 		System.out.println("Continue? (1: New Order, 2: Exit Program) : ");
 	}
+	
+	void printEnd() {
+		System.out.println("End of order! Thank you!");
+	}
 
 }
