@@ -1,17 +1,17 @@
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainKiosk {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		
 		// Variables
-		int [][] orderList = new int [100][5];
+		//List<OrderList> data = new ArrayList<OrderList>();
 		int moneyOfRow;
 		int moneyOfOrder = 0;
 		int moreChoiceTicket;
 		int isExit;
-		int position = 0;
-		// Object for this class
+		// Objects for Main class
 		PrintForInputs printForInputsClass = new PrintForInputs();
 		Inputs inputClass = new Inputs();
 		Calculations calculationsClass = new Calculations();
@@ -22,28 +22,28 @@ public class MainKiosk {
 			while (true) { 
 				//Inputs
 				inputClass.inputData();
+				
 				//Calculations
 				int age = calculationsClass.calculationOfAge(inputClass.getPersonNumber());
 				moneyOfRow = calculationsClass.calculation(inputClass.getPersonNumber(), inputClass.getNumberChoiceTicket(), 
 														   inputClass.getTicketNumbers(), inputClass.getSpecialOffers(), age);
 				moneyOfOrder += moneyOfRow;
+				
 				//Save and outputs of row
-				orderList = saveOrders.saveOrdersOfRow(inputClass.getNumberChoiceTicket(), age, inputClass.getTicketNumbers(), 
-														moneyOfRow, inputClass.getSpecialOffers(), position, orderList);
-				position++;
 				outputs.printResultOfRow(moneyOfRow);
-				//More choices
+				saveOrders.saveOrdersData(inputClass.getNumberChoiceTicket(), age, inputClass.getTicketNumbers(), 
+												moneyOfRow, inputClass.getSpecialOffers());
+				//outputs.printResultOfOrder(moneyOfOrder);
 				moreChoiceTicket = inputClass.inputMoreChoiceTicket();
 				if (moreChoiceTicket == 2) {
 					printForInputsClass.printEnd();
-					outputs.printResultOfOrder(orderList, position, moneyOfOrder);
+					outputs.printResultOfOrder(moneyOfOrder);
 					break;
 				}		
 			}
 			isExit = inputClass.inputIsExit();
-			//Initialization of orderList
-			orderList = new int [100][5];
-			position = 0;
+			//Initialization of data
+			//data = new ArrayList<OrderList>();
 			moneyOfOrder = 0;
 
 		} while (isExit == 1);

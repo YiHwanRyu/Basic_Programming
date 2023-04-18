@@ -1,15 +1,27 @@
+import java.util.ArrayList;
 
 public class SaveOrders {
+	private ArrayList<OrderList> data = new ArrayList<OrderList>();
 
-	int[][] saveOrdersOfRow(int choiceTicket, int age, int ticketCounts, int priceResult, 
-							int specialOffers, int position, int[][] orderList) {
-		orderList[position][0] = choiceTicket;
-		orderList[position][1] = age;
-		orderList[position][2] = ticketCounts;
-		orderList[position][3] = priceResult;
-		orderList[position][4] = specialOffers;
-		return orderList;
+	public void saveOrdersData(int choiceTicket, int age, int ticketCounts, 
+									int priceResult, int specialOffers) {
+		OrderList orderList = new OrderList();
+		orderList.setDayOrNight(choiceTicket);
+		orderList.setSortOfAge(age);
+		orderList.setTicketCounts(ticketCounts);
+		orderList.setPriceResult(priceResult);
+		orderList.setSpecialOffers(specialOffers);
+		data.add(orderList);
+	}
+
+	public ArrayList<OrderList> getData() {
+		return data;
+	}
+/*
+	public void setData(ArrayList<OrderList> data) {
+		this.data = data;
 	}
 	
-
+*/
+	
 }

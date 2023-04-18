@@ -7,8 +7,14 @@ public class Inputs {
 	private int ticketNumbers;
 	private int specialOffers;
 	// Objects for this class
-	private Scanner scanner = new Scanner(System.in); 
-	private PrintForInputs printForInputs = new PrintForInputs(); 
+	private Scanner scanner = null; 
+	private PrintForInputs printForInputs = null;
+	// Constructor
+	Inputs() {
+		scanner = new Scanner(System.in); 
+		printForInputs = new PrintForInputs();
+	}
+	
 	// Methods of inputs
 	int inputNumberChoiceTicket(){
 		int number;
