@@ -1,9 +1,8 @@
-import java.util.ArrayList;
+import java.util.List;
 
 public class SaveOrders {
-	private ArrayList<OrderList> data = new ArrayList<OrderList>();
 
-	public void saveOrdersData(int choiceTicket, int age, int ticketCounts, 
+	List<OrderList> saveOrdersData(List<OrderList> data, int choiceTicket, int age, int ticketCounts, 
 									int priceResult, int specialOffers) {
 		OrderList orderList = new OrderList();
 		orderList.setDayOrNight(choiceTicket);
@@ -12,16 +11,7 @@ public class SaveOrders {
 		orderList.setPriceResult(priceResult);
 		orderList.setSpecialOffers(specialOffers);
 		data.add(orderList);
-	}
-
-	public ArrayList<OrderList> getData() {
 		return data;
 	}
-/*
-	public void setData(ArrayList<OrderList> data) {
-		this.data = data;
-	}
-	
-*/
-	
+
 }
