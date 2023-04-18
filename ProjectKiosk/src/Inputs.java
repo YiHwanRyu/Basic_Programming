@@ -11,23 +11,35 @@ public class Inputs {
 	private PrintForInputs printForInputs = new PrintForInputs(); 
 	// Methods of inputs
 	int inputNumberChoiceTicket(){
+		int number;
+		do {
 		printForInputs.printChoiceTicket();
-		int number = scanner.nextInt();
+		number = scanner.nextInt();
+		} while (number != 1 && number != 2);
 		return number;
 	}
 	String inputPersonNumber(){
+		String number = "";
+		do {
 		printForInputs.printInputPersonNumber();
-		String number = scanner.next();
+		number = scanner.next();
+		} while (number.length() != 13);
 		return number;
 	}
 	int inputTicketNumbers(){
+		int number;
+		do {
 		printForInputs.printInputTicketNumbers();
-		int number = scanner.nextInt();
+		number = scanner.nextInt();
+		} while (number < 0 || number > 10);
 		return number;
 	}
 	int inputSpecialOffers(){
+		int number;
+		do {
 		printForInputs.printSpecialOffers(); 
-		int number = scanner.nextInt();
+		number = scanner.nextInt();
+		} while (!(number >= 1 && number <= 5));
 		return number;
 	}
 	
