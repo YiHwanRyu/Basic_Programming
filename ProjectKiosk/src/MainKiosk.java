@@ -51,7 +51,7 @@ public class MainKiosk {
 		//Total outputs
 		outputs.printResultOfChoice(dataTotal);
 		outputs.printResultOfSpecialOrders(dataTotal);
-		
+		outputs.printTotalReport(dataTotal);
 	}
 
 }

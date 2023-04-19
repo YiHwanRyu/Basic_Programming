@@ -1,3 +1,5 @@
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class OrderList {
 	private String dayOrNight;
@@ -5,6 +7,8 @@ public class OrderList {
 	private int ticketCounts;
 	private int priceResult;
 	private String specialOffers;
+	private String date;
+	
 	public String getDayOrNight() {
 		return dayOrNight;
 	}
@@ -58,6 +62,14 @@ public class OrderList {
 		} else if (specialOffers == 5) {
 			this.specialOffers = "Pregnant Woman";
 		} 
+	}
+	public String getDate() {
+		return date;
+	}
+	public void setDate() {
+		LocalDate now = LocalDate.now();
+		DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyyMMdd");
+		this.date = now.format(dateTimeFormatter);
 	}
 	
 	

@@ -7,16 +7,16 @@ public class Outputs {
 	}
 	
 	void printResultOfOrder(List<OrderList> data, int moneyOfOrder) {
-		System.out.println("***************************************************");
+		System.out.println("*********************************************************************");
 		for (int i = 0; i < data.size(); i++) {
 			System.out.println(data.get(i).getDayOrNight() + " X " + data.get(i).getTicketCounts() 
 			+ " = " +data.get(i).getPriceResult() + " WON /" + data.get(i).getSortOfAge() + " /"
 			+ data.get(i).getSpecialOffers());
 		}
 		System.out.println("Total : " + moneyOfOrder + " WON");
-		System.out.println("***************************************************");
+		System.out.println("*********************************************************************");
 	}
-	
+	// data 출력
 	void printResultOfChoice(List<OrderList> data) {
 		int numberOfDay = 0;
 		int numberOfNight = 0;
@@ -65,7 +65,7 @@ public class Outputs {
 				}
 			}
 		}
-		System.out.println("============== Total Result Of Choices ============");
+		System.out.println("====================== Total Result Of Choices ======================");
 		System.out.println("DAY Total : " + numberOfDay);
 		System.out.println("BABY : " + numberOfBabyDay + " " + "CHILD : " + numberOfChildDay + " " + 
 						   "TEEN : " + numberOfTeenDay + " " + "ADULT : " + numberOfAdultDay + " " +
@@ -76,7 +76,7 @@ public class Outputs {
 						   "TEEN : " + numberOfTeenNight + " " + "ADULT : " + numberOfAdultNight + " " +
 			         	   "OLD : " + numberOfOldNight);
 		System.out.println("NIGHT Profit Total : " + moneyOfNight + " WON");
-		System.out.println("===================================================");
+		System.out.println("=====================================================================");
 	}
 	
 	void printResultOfSpecialOrders(List<OrderList> data) {
@@ -101,13 +101,31 @@ public class Outputs {
 			}
 			
 		}
-		System.out.println("========= Total Result Of Special Orders ==========");
+		System.out.println("================= Total Result Of Special Orders ====================");
 		System.out.println("Total Tickets : " + numberOfTickets);
 		System.out.println("None of Special Order : " + numberOfNone);
 		System.out.println("Person With Difficulty : " + numberOfDifficulty);
 		System.out.println("Men of national merit : " + numberOfMerit);
 		System.out.println("Multiple kids (More than two) : " + numberOfMultiChild);
 		System.out.println("Pregnant Woman : " + numberOfPregnant);
-		System.out.println("===================================================");
+		System.out.println("=====================================================================");
 	}
+	
+
+	void printTotalReport(List<OrderList> data) {
+		int sortOfTicket = 0;
+		int age = 0;
+		int specialOrder = 0;
+		System.out.println("==============================report=================================");
+		System.out.println("Date     Sort  Age  Amount  Price    SpecialOrder");
+		for (int i = 0; i < data.size(); i++) {
+			System.out.println(data.get(i).getDate() + " " + data.get(i).getDayOrNight() + "   "
+					+ data.get(i).getSortOfAge() + "   " + data.get(i).getTicketCounts() + "    "
+					+ data.get(i).getPriceResult() + "   " + data.get(i).getSpecialOffers());
+		}
+		System.out.println("=====================================================================");
+	}
+	
+	
+	
 }

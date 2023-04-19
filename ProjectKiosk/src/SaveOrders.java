@@ -16,6 +16,7 @@ public class SaveOrders {
 		orderList.setTicketCounts(ticketCounts);
 		orderList.setPriceResult(priceResult);
 		orderList.setSpecialOffers(specialOffers);
+		orderList.setDate();
 		data.add(orderList);
 		return data;
 	}
