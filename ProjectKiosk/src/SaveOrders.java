@@ -1,10 +1,16 @@
 import java.util.List;
 
-public class SaveOrders {
 
+public class SaveOrders {
+	// Objects for this class
+	private OrderList orderList = null; 
+	// Constructor
+	SaveOrders() {
+		orderList = new OrderList(); 
+	}
 	List<OrderList> saveOrdersData(List<OrderList> data, int choiceTicket, int age, int ticketCounts, 
 									int priceResult, int specialOffers) {
-		OrderList orderList = new OrderList();
+		orderList = new OrderList();
 		orderList.setDayOrNight(choiceTicket);
 		orderList.setSortOfAge(age);
 		orderList.setTicketCounts(ticketCounts);
