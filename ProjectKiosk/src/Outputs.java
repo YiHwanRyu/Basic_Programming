@@ -1,12 +1,19 @@
 import java.util.List;
 
 public class Outputs {
+	// Objects for this class
+	private PrintForInputs printForInputs = null; 
+	// Constructor
+	Outputs() {
+		printForInputs = new PrintForInputs(); 
+	}
 	
 	void printResultOfRow(int result) {
 		System.out.println("Price : " + result + " WON");
 	}
 	
 	void printResultOfOrder(List<OrderList> data, int moneyOfOrder) {
+		printForInputs.printEnd();
 		System.out.println("*********************************************************************");
 		for (int i = 0; i < data.size(); i++) {
 			System.out.println(data.get(i).getDayOrNight() + " X " + data.get(i).getTicketCounts() 
@@ -123,6 +130,10 @@ public class Outputs {
 		System.out.println("=====================================================================");
 	}
 	
-	
+	void printEndOfProgram(List<OrderList> data) {
+		printResultOfChoice(data);
+		printResultOfSpecialOrders(data);
+		printTotalReport(data);
+	}
 	
 }
