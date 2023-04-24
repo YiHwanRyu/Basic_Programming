@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 public class Inputs {
 	// Variables
+	private int languageSelect;
 	private int numberChoiceTicket;
 	private String personNumber;
 	private int ticketNumbers;
@@ -16,6 +17,14 @@ public class Inputs {
 	}
 	
 	// Methods of inputs
+	int inputLanguageSelect(){
+		int number;
+		do {
+		printForInputs.printLanguageSelect();
+		number = scanner.nextInt();
+		} while (number != 1 && number != 2 && number != 3);
+		return number;
+	}
 	int inputNumberChoiceTicket(){
 		int number;
 		do {
@@ -50,10 +59,11 @@ public class Inputs {
 	}
 	
 	void inputData() {
+		Constants.languageSelect(inputLanguageSelect());
 		setNumberChoiceTicket(inputNumberChoiceTicket());
 		setPersonNumber(inputPersonNumber());
 		setTicketNumbers(inputTicketNumbers());
-		setSpecialOffers(inputSpecialOffers());	   	
+		setSpecialOffers(inputSpecialOffers());	  
 	}
 	
 	int inputMoreChoiceTicket(){
