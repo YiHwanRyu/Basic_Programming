@@ -1,45 +1,50 @@
 
 
 public class PrintForInputs {
-
+	void printLanguageSelect() {
+		System.out.println("Select the language!(언어를 선택하세요!)");
+		System.out.println("1. English");
+		System.out.println("2. 한국어");
+		System.out.println("3. 일본어");
+	}
 	void printChoiceTicket() {
-		System.out.println("Welcome to PolyLand!!");
-		System.out.println("Choose your type of ticket!");
-		System.out.println("1. Daytime");
-		System.out.println("2. Nighttime");
+		System.out.println(Constants.WELLCOME_MESSAGE);
+		System.out.println(Constants.CHOSING_TICKET_MESSAGE);
+		System.out.println("1. " + Constants.CHOSING_TICKET_MESSAGE_DAY);
+		System.out.println("2. " + Constants.CHOSING_TICKET_MESSAGE_NIGHT);
 	}
 
 	void printInputPersonNumber() {
-		System.out.println("Please input your Resident Registration Number!");
-		System.out.println("**Only input Numbers**");
+		System.out.println(Constants.PERSONNUMBER_MESSAGE);
+		System.out.println(Constants.PERSONNUMBER_MESSAGE_NOTICE);
 	}
 
 	void printInputTicketNumbers() {
-		System.out.println("How many tickets do you want?");
-		System.out.println("**Up to 10**");
+		System.out.println(Constants.COUNTS_MESSAGE);
+		System.out.println(Constants.COUNTS_MESSAGE_NOTICE);
 	}
 
 	void printSpecialOffers() {
-		System.out.println("Choose your special offer!");
-		System.out.println("1. None (Special offer for age is already applied)");
-		System.out.println("2. Person With Difficulty");
-		System.out.println("3. Men of national merit");
-		System.out.println("4. Multiple kids (More than two)");
-		System.out.println("5. Pregnant Woman");
+		System.out.println(Constants.SPECIALORDERS_MESSAGE);
+		System.out.println("1. " + Constants.SPECIALORDERS_MESSAGE_NONE);
+		System.out.println("2. " + Constants.SPECIALORDERS_MESSAGE_DIFFICULTY);
+		System.out.println("3. " + Constants.SPECIALORDERS_MESSAGE_MERIT);
+		System.out.println("4. " + Constants.SPECIALORDERS_MESSAGE_MULTIKIDS);
+		System.out.println("5. " + Constants.SPECIALORDERS_MESSAGE_PREGNANT);
 	}
 
 	void printMoreChoiceTicket() {
-		System.out.println("Continue to buy tickets or Exit?");
-		System.out.println("1. Buying ticket");
-		System.out.println("2. Exit");
+		System.out.println(Constants.BUYING_MESSAGE);
+		System.out.println(Constants.BUYING_MESSAGE_TICKET);
+		System.out.println(Constants.BUYING_MESSAGE_EXIT);
 	}
 	
 	void printIsExit() {
-		System.out.println("Continue? (1: New Order, 2: Exit Program)");
+		System.out.println(Constants.CONTINUE_MESSAGE);
 	}
 	
 	void printEnd() {
-		System.out.println("End of order! Thank you!");
+		System.out.println(Constants.END_MESSAGE);
 	}
 
 }
