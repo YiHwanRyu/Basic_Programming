@@ -2,7 +2,6 @@ import java.util.Scanner;
 
 public class Inputs {
 	// Variables
-	private int languageSelect;
 	private int numberChoiceTicket;
 	private String personNumber;
 	private int ticketNumbers;

@@ -14,7 +14,7 @@ public class Constants {
 	public static final int DAY = 1, NIGHT = 2;
 	public static final int NONE = 1,  DIFFICULTY = 2, MERIT = 3, MULTIKIDS = 4, PREGNANT = 5;
 	public static final int ENGLISH = 1, KOREAN = 2, JAPANESE = 3;
-	// MESSAGE for program
+	// Messages for program
 	public static String WELLCOME_MESSAGE = "";
 	public static String CHOSING_TICKET_MESSAGE = "";
 	public static String CHOSING_TICKET_MESSAGE_DAY = "";
@@ -47,9 +47,12 @@ public class Constants {
 	public static String REPORT_MESSAGE = "";
 	public static String RESULT_MESSAGE_CHOICES = "";
 	public static String RESULT_MESSAGE_SPECIALORDERS = "";
-	public static String HEADOFTOTAL = "";
+	public static String HEAD_OF_TOTAL = "";
+	public static String HEAD_OF_TOTAL_CSV = "";
+	public static String HEAD_OF_TOTAL_NOTICE = "";
+	public static String DATE_OF_TOTAL = "";
 
-	
+	// Language setup
 	public static void languageSelect(int language) {
 		if (language == ENGLISH) {
 			Constants.WELLCOME_MESSAGE = "Welcome to PolyLand!!";
@@ -83,9 +86,13 @@ public class Constants {
 			Constants.RESULT_MESSAGE_CHOICES = "RESULT OF CHOICES";
 			Constants.RESULT_MESSAGE_SPECIALORDERS = "RESULT OF SPECIAL ORDERS";
 			Constants.PROFIT_MESSAGE = "PROFIT";
-			Constants.HEADOFTOTAL = "Date     Sort  Age  Amount      Price    SpecialOrder";
+			Constants.HEAD_OF_TOTAL = "Date     Sort  Age  Amount      Price    SpecialOrder";
+			Constants.HEAD_OF_TOTAL_NOTICE = "Type: 1 - Daytime, 2 - Nighttime"
+                    + "\nAge: Baby - 0, Child - 1, Teen - 2, Adult - 3, Old - 4"
+                    + "\nSpecial discount: None - 1, Disability - 2, National merit - 3\n, Multi-child - 4, Pregnant - 5\n";
+			Constants.DATE_OF_TOTAL = "SALES REPORT OF DATE";	
+			Constants.HEAD_OF_TOTAL_CSV = "Date,Sort,Age,Amount,Price,SpecialOrder";
 			
-				
 		} else if (language == KOREAN) {
 			Constants.WELLCOME_MESSAGE = "환영해요! 폴리랜드입니다!";
 			Constants.CHOSING_TICKET_MESSAGE = "티켓의 종류를 선택하세요";
@@ -115,10 +122,15 @@ public class Constants {
 			Constants.ADULT_MESSAGE = "어른";
 			Constants.OLD_MESSAGE = "노인";
 			Constants.REPORT_MESSAGE = "판매 결과";
-			Constants.RESULT_MESSAGE_CHOICES = "권종 별 판매현황";
+			Constants.RESULT_MESSAGE_CHOICES = "권종별 판매현황";
 			Constants.RESULT_MESSAGE_SPECIALORDERS = "우대권 판매현황";
 			Constants.PROFIT_MESSAGE = "수익";
-			Constants.HEADOFTOTAL = "날짜      종류   연령    개수         가격      우대사항";
+			Constants.HEAD_OF_TOTAL = "날짜      종류   연령    개수         가격      우대사항";
+			Constants.HEAD_OF_TOTAL_NOTICE = "종류 : 1 - 주간권, 2 - 야간권"
+					+ "\n연령 : 유아 - 0, 어린이 - 1, 청소년 - 2, 어른 - 3, 노인 - 4"
+					+ "\n우대사항 : 없음 - 1, 장애인 - 2, 국가유공자 - 3, 다자녀 - 4, 임산부 - 5\n";
+			Constants.DATE_OF_TOTAL = "일자별 매출 현황";
+			Constants.HEAD_OF_TOTAL_CSV = "날짜,종류,연령,개수,가격,우대사항";
 			
 		}  else if (language == JAPANESE) {
 			Constants.WELLCOME_MESSAGE = "ようこそ！ポーランド！";
@@ -152,8 +164,12 @@ public class Constants {
 			Constants.RESULT_MESSAGE_CHOICES = "チケット種別別販売状況";
 			Constants.RESULT_MESSAGE_SPECIALORDERS = "優待券販売状況";
 			Constants.PROFIT_MESSAGE = "利益";
-			Constants.HEADOFTOTAL = "日付      種別   年齢    枚数         価格      優待券";
-
+			Constants.HEAD_OF_TOTAL = "日付      種別   年齢    枚数         価格      優待券";
+			Constants.HEAD_OF_TOTAL_NOTICE = "種類：1 - 昼間券、2 - 夜間券"
+                    + "\n年齢：乳幼児 - 0、子供 - 1、青少年 - 2、大人 - 3、高齢者 - 4"
+                    + "\n優待：なし - 1、障がい者 - 2、国家功労者 - 3、多数子供 - 4、妊婦 - 5\n";
+			Constants.DATE_OF_TOTAL = "日別売上高の状況";
+			Constants.HEAD_OF_TOTAL_CSV = "日付,種別,年齢,枚数,価格,優待券";
 		}
 		
 	}

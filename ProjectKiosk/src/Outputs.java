@@ -1,3 +1,8 @@
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
 
 public class Outputs {
@@ -11,7 +16,7 @@ public class Outputs {
 	void printResultOfRow(int result) {
 		System.out.println(Constants.PRICE_MESSAGE + " : " + result + " " + Constants.UNIT_MESSAGE);
 	}
-	
+	// Print for One order
 	void printResultOfOrder(List<OrderList> data, int moneyOfOrder) {
 		printForInputs.printEnd();
 		System.out.println("*********************************************************************");
@@ -56,7 +61,7 @@ public class Outputs {
 		System.out.println(Constants.TOTAL_MESSAGE + " : " + moneyOfOrder + " " + Constants.UNIT_MESSAGE);
 		System.out.println("*********************************************************************");
 	}
-	// data 출력
+	// printing data for each purpose
 	void printResultOfChoice(List<OrderList> data) {
 		int numberOfDay = 0;
 		int numberOfNight = 0;
@@ -164,7 +169,8 @@ public class Outputs {
 	void printTotalReport(List<OrderList> data) {
 		System.out.println("=====================================================================");
 		System.out.printf("<%s>\n", Constants.REPORT_MESSAGE);
-		System.out.println(Constants.HEADOFTOTAL);
+		System.out.println(Constants.HEAD_OF_TOTAL_NOTICE);
+		System.out.println(Constants.HEAD_OF_TOTAL);
 		for (int i = 0; i < data.size(); i++) {
 			System.out.printf("%s%3s%5s%8s%13s%8s\n", data.get(i).getDate(), data.get(i).getDayOrNight()
 					, data.get(i).getSortOfAge(), data.get(i).getTicketCounts(), data.get(i).getPriceResult()
@@ -173,10 +179,49 @@ public class Outputs {
 		System.out.println("=====================================================================");
 	}
 	
+	void printTotalReportDate(List<OrderList> data) {
+		HashMap<String, Integer> dataMap = new HashMap<String, Integer>();
+		System.out.println("=====================================================================");
+		System.out.printf("<%s>\n", Constants.DATE_OF_TOTAL);
+		for (int i = 0; i < data.size(); i++) {
+			dataMap.put(data.get(i).getDate(), dataMap.getOrDefault(data.get(i).getDate(), 0) + data.get(i).getPriceResult());
+		}
+		for (String key : dataMap.keySet()) {
+			System.out.printf("%s%15s\n", key + " : " + Constants.TOTAL_MESSAGE + " " +
+					Constants.PROFIT_MESSAGE + "  ", dataMap.get(key) + " " + Constants.UNIT_MESSAGE);
+		}
+		System.out.println("=====================================================================");
+	}
+	
+	void makeFile(List<OrderList> data) {
+		File file = new File("C:\\Users\\kopo13\\Desktop\\파일출력\\report.csv");
+		try {
+			BufferedWriter bWriter = new BufferedWriter(new FileWriter(file));
+			bWriter.write("<" + Constants.REPORT_MESSAGE + ">");
+			bWriter.newLine();
+			bWriter.write(Constants.HEAD_OF_TOTAL_CSV);
+			bWriter.newLine();
+			bWriter.write("");
+			for (int i = 0; i < data.size(); i++) {
+				bWriter.write(data.get(i).getDate() +","+ data.get(i).getDayOrNight() +","
+						+ data.get(i).getSortOfAge() + "," + data.get(i).getTicketCounts() + "," 
+						+ data.get(i).getPriceResult() + "," + data.get(i).getSpecialOffers());
+				bWriter.newLine();
+			}
+			bWriter.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	
 	void printEndOfProgram(List<OrderList> data) {
-		printResultOfChoice(data);
-		printResultOfSpecialOrders(data);
 		printTotalReport(data);
+		printResultOfChoice(data);
+		printTotalReportDate(data);
+		printResultOfSpecialOrders(data);
+		makeFile(data);
 	}
 	
 }
