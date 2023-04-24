@@ -8,8 +8,6 @@ public class Constants {
 	public static final int MIN_BABY = 2, 
 			 				MIN_CHILD = 3, MIN_TEEN = 13, MIN_ADULT = 19,
 			 				MAX_CHILD = 12, MAX_TEEN = 18, MAX_ADULT = 64;
-	public static final int BABY = 1, CHILD = 2, TEEN = 3, ADULT = 4, OLD = 5;
 	public static final float DIFFICULTY_DISCOUNT_RATE = 0.6f, MERIT_DISCOUNT_RATE = 0.5f,
 							  MULTIPLE_KIDS_DISCOUNT_RATE = 0.8f, PREGNANT_DISCOUNT_RATE = 0.85f;
-	public static final int MAX_TICKET_COUNT = 10, MIN_TICKET_COUNT = 1;
 }

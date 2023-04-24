@@ -113,9 +113,6 @@ public class Outputs {
 	
 
 	void printTotalReport(List<OrderList> data) {
-		int sortOfTicket = 0;
-		int age = 0;
-		int specialOrder = 0;
 		System.out.println("==============================report=================================");
 		System.out.println("Date     Sort  Age  Amount  Price    SpecialOrder");
 		for (int i = 0; i < data.size(); i++) {
