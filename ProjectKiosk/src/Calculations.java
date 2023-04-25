@@ -77,13 +77,12 @@ public class Calculations {
 		return tempPrice * ticketNumbers;
 	}	
 			 
-	int calculation(String personNumber, int choiceTicket, 
-					int ticketNumbers, int specialOffers, int age) {
+	int calculation(Inputs inputClass) {
 		int tempPrice;
-		age = calculationOfAge(personNumber);
-		tempPrice = calcChoiceAndAge(age, choiceTicket);
-		tempPrice = calcSpecialOffers(tempPrice, specialOffers);
-		tempPrice = calcTicketNumbers(tempPrice, ticketNumbers);
+		int age = calculationOfAge(inputClass.getPersonNumber());
+		tempPrice = calcChoiceAndAge(age, inputClass.getNumberChoiceTicket());
+		tempPrice = calcSpecialOffers(tempPrice, inputClass.getSpecialOffers());
+		tempPrice = calcTicketNumbers(tempPrice, inputClass.getTicketNumbers());
 		return tempPrice;		
 	} 		 
 

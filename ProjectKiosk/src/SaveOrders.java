@@ -4,18 +4,23 @@ import java.util.List;
 public class SaveOrders {
 	// Objects for this class
 	private OrderList orderList = null; 
+	private Outputs outputClass = null;
+	private Calculations calculationClass = null;
 	// Constructor
 	SaveOrders() {
-		orderList = new OrderList(); 
-	}
-	List<OrderList> saveOrdersData(List<OrderList> data, int choiceTicket, int age, int ticketCounts, 
-									int priceResult, int specialOffers) {
 		orderList = new OrderList();
-		orderList.setDayOrNight(choiceTicket);
-		orderList.setSortOfAge(age);
-		orderList.setTicketCounts(ticketCounts);
+		outputClass = new Outputs();
+		calculationClass = new Calculations();
+	}
+	List<OrderList> saveOrdersData(List<OrderList> data, int priceResult, Inputs inputClass) {
+		outputClass.printResultOfRow(priceResult);
+		
+		orderList = new OrderList();
+		orderList.setDayOrNight(inputClass.getNumberChoiceTicket());
+		orderList.setSortOfAge(calculationClass.calculationOfAge(inputClass.getPersonNumber()));
+		orderList.setTicketCounts(inputClass.getTicketNumbers());
 		orderList.setPriceResult(priceResult);
-		orderList.setSpecialOffers(specialOffers);
+		orderList.setSpecialOffers(inputClass.getSpecialOffers());
 		orderList.setDate();
 		data.add(orderList);
 		return data;

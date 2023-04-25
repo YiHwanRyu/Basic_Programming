@@ -17,7 +17,7 @@ public class Outputs {
 		System.out.println(Constants.PRICE_MESSAGE + " : " + result + " " + Constants.UNIT_MESSAGE);
 	}
 	// Print for One order
-	void printResultOfOrder(List<OrderList> data, int moneyOfOrder) {
+	List<OrderList> printResultOfOrder(List<OrderList> data, int moneyOfOrder) {
 		printForInputs.printEnd();
 		System.out.println("*********************************************************************");
 		for (int i = 0; i < data.size(); i++) {
@@ -60,6 +60,7 @@ public class Outputs {
 		}
 		System.out.println(Constants.TOTAL_MESSAGE + " : " + moneyOfOrder + " " + Constants.UNIT_MESSAGE);
 		System.out.println("*********************************************************************");
+		return data;
 	}
 	// printing data for each purpose
 	void printResultOfChoice(List<OrderList> data) {
@@ -192,7 +193,7 @@ public class Outputs {
 		}
 		System.out.println("=====================================================================");
 	}
-	
+	// Making CSV file
 	void makeFile(List<OrderList> data) {
 		File file = new File("C:\\Users\\kopo13\\Desktop\\파일출력\\report.csv");
 		try {
@@ -214,8 +215,7 @@ public class Outputs {
 			e.printStackTrace();
 		}
 	}
-	
-	
+	// Print and makeFile (End of Program)
 	void printEndOfProgram(List<OrderList> data) {
 		printTotalReport(data);
 		printResultOfChoice(data);
