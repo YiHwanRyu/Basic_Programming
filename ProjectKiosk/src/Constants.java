@@ -13,7 +13,7 @@ public class Constants {
 	public static final int BABY = 0, CHILD = 1, TEEN = 2, ADULT = 3, OLD = 4;
 	public static final int DAY = 1, NIGHT = 2;
 	public static final int NONE = 1,  DIFFICULTY = 2, MERIT = 3, MULTIKIDS = 4, PREGNANT = 5;
-	public static final int ENGLISH = 1, KOREAN = 2, JAPANESE = 3;
+	public static final int NO = 2, NEW_ORDER = 1;
 	// Messages for program
 	public static String WELLCOME_MESSAGE = "";
 	public static String CHOSING_TICKET_MESSAGE = "";
