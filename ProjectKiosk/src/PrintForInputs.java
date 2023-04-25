@@ -1,12 +1,7 @@
 
 
 public class PrintForInputs {
-	void printLanguageSelect() {
-		System.out.println("Select the language!(언어를 선택하세요!)");
-		System.out.println("1. English");
-		System.out.println("2. 한국어");
-		System.out.println("3. 일본어");
-	}
+	
 	void printChoiceTicket() {
 		System.out.println(Constants.WELLCOME_MESSAGE);
 		System.out.println(Constants.CHOSING_TICKET_MESSAGE);

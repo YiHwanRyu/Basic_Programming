@@ -53,8 +53,8 @@ public class Constants {
 	public static String DATE_OF_TOTAL = "";
 
 	// Language setup
-	public static void languageSelect(int language) {
-		if (language == ENGLISH) {
+	public static void languageSelect(String language) {
+		if (language.equals("US")) {
 			Constants.WELLCOME_MESSAGE = "Welcome to PolyLand!!";
 			Constants.CHOSING_TICKET_MESSAGE = "Choose your type of ticket!";
 			Constants.CHOSING_TICKET_MESSAGE_DAY = "Daytime";
@@ -93,7 +93,7 @@ public class Constants {
 			Constants.DATE_OF_TOTAL = "SALES REPORT OF DATE";	
 			Constants.HEAD_OF_TOTAL_CSV = "Date,Sort,Age,Amount,Price,SpecialOrder";
 			
-		} else if (language == KOREAN) {
+		} else if (language.equals("KR")) {
 			Constants.WELLCOME_MESSAGE = "환영해요! 폴리랜드입니다!";
 			Constants.CHOSING_TICKET_MESSAGE = "티켓의 종류를 선택하세요";
 			Constants.CHOSING_TICKET_MESSAGE_DAY = "주간권";
@@ -132,7 +132,7 @@ public class Constants {
 			Constants.DATE_OF_TOTAL = "일자별 매출 현황";
 			Constants.HEAD_OF_TOTAL_CSV = "날짜,종류,연령,개수,가격,우대사항";
 			
-		}  else if (language == JAPANESE) {
+		}  else if (language.equals("JP")) {
 			Constants.WELLCOME_MESSAGE = "ようこそ！ポーランド！";
 			Constants.CHOSING_TICKET_MESSAGE = "チケットの種類を選択してください";
 			Constants.CHOSING_TICKET_MESSAGE_DAY = "デイチケット";
