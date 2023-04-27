@@ -9,11 +9,13 @@ public class Inputs {
 	private int specialOffers;
 	// Objects for this class
 	private Scanner scanner = null; 
+	private Constants constants = null;
 	private PrintForInputs printForInputs = null;
 	// Constructor
 	Inputs() {
 		scanner = new Scanner(System.in); 
 		printForInputs = new PrintForInputs();
+		constants = new Constants(); 
 	}
 	
 	// Methods of inputs
@@ -51,8 +53,7 @@ public class Inputs {
 	}
 	
 	void inputData() {
-		Locale currentLocale = Locale.getDefault();
-		Constants.languageSelect(currentLocale.getCountry());
+		constants.languageSelect();
 		setNumberChoiceTicket(inputNumberChoiceTicket());
 		setPersonNumber(inputPersonNumber());
 		setTicketNumbers(inputTicketNumbers());

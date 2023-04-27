@@ -1,3 +1,5 @@
+import java.util.Locale;
+import java.util.ResourceBundle;
 
 public class Constants {
 	public static final int BABY_PRICE = 0,
@@ -53,124 +55,45 @@ public class Constants {
 	public static String DATE_OF_TOTAL = "";
 
 	// Language setup
-	public static void languageSelect(String language) {
-		if (language.equals("US")) {
-			Constants.WELLCOME_MESSAGE = "Welcome to PolyLand!!";
-			Constants.CHOSING_TICKET_MESSAGE = "Choose your type of ticket!";
-			Constants.CHOSING_TICKET_MESSAGE_DAY = "Daytime";
-			Constants.CHOSING_TICKET_MESSAGE_NIGHT = "Nighttime";
-			Constants.PERSONNUMBER_MESSAGE = "Please input your Resident Registration Number!";
-			Constants.PERSONNUMBER_MESSAGE_NOTICE = "**Only input Numbers**";
-			Constants.COUNTS_MESSAGE = "How many tickets do you want?";
-			Constants.COUNTS_MESSAGE_NOTICE = "**Up to 10**";
-			Constants.SPECIALORDERS_MESSAGE = "Choose your special offer!";
-			Constants.SPECIALORDERS_MESSAGE_NONE = "None (Special offer for age is already applied)";
-			Constants.SPECIALORDERS_MESSAGE_DIFFICULTY = "Person With Difficulty";
-			Constants.SPECIALORDERS_MESSAGE_MERIT = "Men of national merit";
-			Constants.SPECIALORDERS_MESSAGE_MULTIKIDS = "Multiple kids (More than two)";
-			Constants.SPECIALORDERS_MESSAGE_PREGNANT = "Pregnant Woman";
-			Constants.BUYING_MESSAGE = "Continue to buy tickets or Exit?";
-			Constants.BUYING_MESSAGE_TICKET = "1. Buying ticket";
-			Constants.BUYING_MESSAGE_EXIT = "2. Exit";
-			Constants.CONTINUE_MESSAGE = "Continue? (1: New Order, 2: Exit Program)";
-			Constants.END_MESSAGE = "End of order! Thank you!";
-			Constants.UNIT_MESSAGE = "WON";
-			Constants.PRICE_MESSAGE = "Price";
-			Constants.TOTAL_MESSAGE = "Total";
-			Constants.BABY_MESSAGE = "BABY";
-			Constants.CHILD_MESSAGE = "CHILD";
-			Constants.TEEN_MESSAGE = "TEEN";
-			Constants.ADULT_MESSAGE = "ADULT";
-			Constants.OLD_MESSAGE = "OLD";
-			Constants.REPORT_MESSAGE = "REPORT";
-			Constants.RESULT_MESSAGE_CHOICES = "RESULT OF CHOICES";
-			Constants.RESULT_MESSAGE_SPECIALORDERS = "RESULT OF SPECIAL ORDERS";
-			Constants.PROFIT_MESSAGE = "PROFIT";
-			Constants.HEAD_OF_TOTAL = "Date     Sort  Age  Amount      Price    SpecialOrder";
-			Constants.HEAD_OF_TOTAL_NOTICE = "Type: 1 - Daytime, 2 - Nighttime"
-                    + "\nAge: Baby - 0, Child - 1, Teen - 2, Adult - 3, Old - 4"
-                    + "\nSpecial discount: None - 1, Disability - 2, National merit - 3\n, Multi-child - 4, Pregnant - 5\n";
-			Constants.DATE_OF_TOTAL = "SALES REPORT OF DATE";	
-			Constants.HEAD_OF_TOTAL_CSV = "Date,Sort,Age,Amount,Price,SpecialOrder";
-			
-		} else if (language.equals("KR")) {
-			Constants.WELLCOME_MESSAGE = "환영해요! 폴리랜드입니다!";
-			Constants.CHOSING_TICKET_MESSAGE = "티켓의 종류를 선택하세요";
-			Constants.CHOSING_TICKET_MESSAGE_DAY = "주간권";
-			Constants.CHOSING_TICKET_MESSAGE_NIGHT = "야간권";
-			Constants.PERSONNUMBER_MESSAGE = "주민등록번호를 입력해주세요!";
-			Constants.PERSONNUMBER_MESSAGE_NOTICE = "**숫자만 입력하세요**";
-			Constants.COUNTS_MESSAGE = "몇 개를 주문하시겠어요?";
-			Constants.COUNTS_MESSAGE_NOTICE = "**10개까지 가능합니다!**";
-			Constants.SPECIALORDERS_MESSAGE = "우대사항을 선택하세요!";
-			Constants.SPECIALORDERS_MESSAGE_NONE = "없음 (나이 우대는 자동처리)";
-			Constants.SPECIALORDERS_MESSAGE_DIFFICULTY = "장애인";
-			Constants.SPECIALORDERS_MESSAGE_MERIT = "국가유공자";
-			Constants.SPECIALORDERS_MESSAGE_MULTIKIDS = "다자녀";
-			Constants.SPECIALORDERS_MESSAGE_PREGNANT = "임산부";
-			Constants.BUYING_MESSAGE = "더 주문하시겠어요?";
-			Constants.BUYING_MESSAGE_TICKET = "1. 추가구매";
-			Constants.BUYING_MESSAGE_EXIT = "2. 주문완료";
-			Constants.CONTINUE_MESSAGE = "계속 이용하시겠어요? (1: 새로운 주문, 2: 이용완료)";
-			Constants.END_MESSAGE = "프로그램이 종료되었습니다. 감사합니다!";
-			Constants.UNIT_MESSAGE = "원";
-			Constants.PRICE_MESSAGE = "가격";
-			Constants.TOTAL_MESSAGE = "총계";
-			Constants.BABY_MESSAGE = "유아";
-			Constants.CHILD_MESSAGE = "어린이";
-			Constants.TEEN_MESSAGE = "청소년";
-			Constants.ADULT_MESSAGE = "어른";
-			Constants.OLD_MESSAGE = "노인";
-			Constants.REPORT_MESSAGE = "판매 결과";
-			Constants.RESULT_MESSAGE_CHOICES = "권종별 판매현황";
-			Constants.RESULT_MESSAGE_SPECIALORDERS = "우대권 판매현황";
-			Constants.PROFIT_MESSAGE = "수익";
-			Constants.HEAD_OF_TOTAL = "날짜      종류   연령    개수         가격      우대사항";
-			Constants.HEAD_OF_TOTAL_NOTICE = "종류 : 1 - 주간권, 2 - 야간권"
-					+ "\n연령 : 유아 - 0, 어린이 - 1, 청소년 - 2, 어른 - 3, 노인 - 4"
-					+ "\n우대사항 : 없음 - 1, 장애인 - 2, 국가유공자 - 3, 다자녀 - 4, 임산부 - 5\n";
-			Constants.DATE_OF_TOTAL = "일자별 매출 현황";
-			Constants.HEAD_OF_TOTAL_CSV = "날짜,종류,연령,개수,가격,우대사항";
-			
-		}  else if (language.equals("JP")) {
-			Constants.WELLCOME_MESSAGE = "ようこそ！ポーランド！";
-			Constants.CHOSING_TICKET_MESSAGE = "チケットの種類を選択してください";
-			Constants.CHOSING_TICKET_MESSAGE_DAY = "デイチケット";
-			Constants.CHOSING_TICKET_MESSAGE_NIGHT = "ナイトチケット";
-			Constants.PERSONNUMBER_MESSAGE = "住民登録番号を入力してください！";
-			Constants.PERSONNUMBER_MESSAGE_NOTICE = "**数字のみ入力してください**";
-			Constants.COUNTS_MESSAGE = "何枚ご注文いただけますか？";
-			Constants.COUNTS_MESSAGE_NOTICE = "**10枚まで可能です！**";
-			Constants.SPECIALORDERS_MESSAGE = "優待券を選択してください！";
-			Constants.SPECIALORDERS_MESSAGE_NONE = "なし（年齢優待は自動適用）";
-			Constants.SPECIALORDERS_MESSAGE_DIFFICULTY = "障がい者";
-			Constants.SPECIALORDERS_MESSAGE_MERIT = "国家功労者";
-			Constants.SPECIALORDERS_MESSAGE_MULTIKIDS = "多子";
-			Constants.SPECIALORDERS_MESSAGE_PREGNANT = "妊婦";
-			Constants.BUYING_MESSAGE = "追加注文しますか？";
-			Constants.BUYING_MESSAGE_TICKET = "1. 追加購入";
-			Constants.BUYING_MESSAGE_EXIT = "2. 注文完了";
-			Constants.CONTINUE_MESSAGE = "続けますか？（1：新しい注文、2：終了）";
-			Constants.END_MESSAGE = "プログラムが終了しました。ありがとうございました！";
-			Constants.UNIT_MESSAGE = "ウォン";
-			Constants.PRICE_MESSAGE = "価格";
-			Constants.TOTAL_MESSAGE = "合計";
-			Constants.BABY_MESSAGE = "乳児";
-			Constants.CHILD_MESSAGE = "子供";
-			Constants.TEEN_MESSAGE = "ティーンエイジャー";
-			Constants.ADULT_MESSAGE = "大人";
-			Constants.OLD_MESSAGE = "高齢者";
-			Constants.REPORT_MESSAGE = "販売結果";
-			Constants.RESULT_MESSAGE_CHOICES = "チケット種別別販売状況";
-			Constants.RESULT_MESSAGE_SPECIALORDERS = "優待券販売状況";
-			Constants.PROFIT_MESSAGE = "利益";
-			Constants.HEAD_OF_TOTAL = "日付      種別   年齢    枚数         価格      優待券";
-			Constants.HEAD_OF_TOTAL_NOTICE = "種類：1 - 昼間券、2 - 夜間券"
-                    + "\n年齢：乳幼児 - 0、子供 - 1、青少年 - 2、大人 - 3、高齢者 - 4"
-                    + "\n優待：なし - 1、障がい者 - 2、国家功労者 - 3、多数子供 - 4、妊婦 - 5\n";
-			Constants.DATE_OF_TOTAL = "日別売上高の状況";
-			Constants.HEAD_OF_TOTAL_CSV = "日付,種別,年齢,枚数,価格,優待券";
-		}
+	void languageSelect() {
+		Locale currentLocale = Locale.getDefault();
+		ResourceBundle messages = ResourceBundle.getBundle("MessagesBundle", currentLocale);
+		WELLCOME_MESSAGE = messages.getString("WELLCOME_MESSAGE");
+		CHOSING_TICKET_MESSAGE = messages.getString("CHOSING_TICKET_MESSAGE");
+		CHOSING_TICKET_MESSAGE_DAY = messages.getString("CHOSING_TICKET_MESSAGE_DAY");
+		CHOSING_TICKET_MESSAGE_NIGHT = messages.getString("CHOSING_TICKET_MESSAGE_NIGHT");
+		PERSONNUMBER_MESSAGE = messages.getString("PERSONNUMBER_MESSAGE");
+		PERSONNUMBER_MESSAGE_NOTICE = messages.getString("PERSONNUMBER_MESSAGE_NOTICE");
+		COUNTS_MESSAGE = messages.getString("COUNTS_MESSAGE");
+		COUNTS_MESSAGE_NOTICE = messages.getString("COUNTS_MESSAGE_NOTICE");
+		SPECIALORDERS_MESSAGE = messages.getString("SPECIALORDERS_MESSAGE");
+		SPECIALORDERS_MESSAGE_NONE = messages.getString("SPECIALORDERS_MESSAGE_NONE");
+		SPECIALORDERS_MESSAGE_DIFFICULTY = messages.getString("SPECIALORDERS_MESSAGE_DIFFICULTY");
+		SPECIALORDERS_MESSAGE_MERIT = messages.getString("SPECIALORDERS_MESSAGE_MERIT");
+		SPECIALORDERS_MESSAGE_MULTIKIDS = messages.getString("SPECIALORDERS_MESSAGE_MULTIKIDS");
+		SPECIALORDERS_MESSAGE_PREGNANT = messages.getString("SPECIALORDERS_MESSAGE_PREGNANT");
+		BUYING_MESSAGE = messages.getString("BUYING_MESSAGE");
+		BUYING_MESSAGE_TICKET = messages.getString("BUYING_MESSAGE_TICKET");
+		BUYING_MESSAGE_EXIT = messages.getString("BUYING_MESSAGE_EXIT");
+		CONTINUE_MESSAGE = messages.getString("CONTINUE_MESSAGE");
+		END_MESSAGE = messages.getString("END_MESSAGE");
 		
+		UNIT_MESSAGE = messages.getString("UNIT_MESSAGE");
+		PRICE_MESSAGE = messages.getString("PRICE_MESSAGE");
+		TOTAL_MESSAGE = messages.getString("TOTAL_MESSAGE");
+		PROFIT_MESSAGE = messages.getString("PROFIT_MESSAGE");
+		BABY_MESSAGE = messages.getString("BABY_MESSAGE");
+		CHILD_MESSAGE = messages.getString("CHILD_MESSAGE");
+		TEEN_MESSAGE = messages.getString("TEEN_MESSAGE");
+		ADULT_MESSAGE = messages.getString("ADULT_MESSAGE");
+		OLD_MESSAGE = messages.getString("OLD_MESSAGE");
+		REPORT_MESSAGE = messages.getString("REPORT_MESSAGE");
+		RESULT_MESSAGE_CHOICES = messages.getString("RESULT_MESSAGE_CHOICES");
+		RESULT_MESSAGE_SPECIALORDERS = messages.getString("RESULT_MESSAGE_SPECIALORDERS");
+		HEAD_OF_TOTAL = messages.getString("HEAD_OF_TOTAL");
+		HEAD_OF_TOTAL_CSV = messages.getString("HEAD_OF_TOTAL_CSV");
+		HEAD_OF_TOTAL_NOTICE = messages.getString("HEAD_OF_TOTAL_NOTICE");
+		DATE_OF_TOTAL = messages.getString("DATE_OF_TOTAL");
+
 	}
 }
