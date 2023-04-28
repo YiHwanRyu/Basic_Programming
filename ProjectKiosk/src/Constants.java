@@ -16,7 +16,13 @@ public class Constants {
 	public static final int DAY = 1, NIGHT = 2;
 	public static final int NONE = 1,  DIFFICULTY = 2, MERIT = 3, MULTIKIDS = 4, PREGNANT = 5;
 	public static final int NO = 2, NEW_ORDER = 1;
+	public static final int RUNORDER = 1, DATA_ANALYZE_AND_SAVE = 2, EXIT_MACHINE = 3;
 	// Messages for program
+	public static String PROGRAM_MESSAGE = "";
+	public static String CHOSING_PROGRAM_MESSAGE = "";
+	public static String CHOSING_PROGRAM_MESSAGE_RUN = "";
+	public static String CHOSING_PROGRAM_MESSAGE_DATA = "";
+	public static String CHOSING_PROGRAM_MESSAGE_OFF = "";
 	public static String WELLCOME_MESSAGE = "";
 	public static String CHOSING_TICKET_MESSAGE = "";
 	public static String CHOSING_TICKET_MESSAGE_DAY = "";
@@ -36,7 +42,6 @@ public class Constants {
 	public static String BUYING_MESSAGE_EXIT = "";
 	public static String CONTINUE_MESSAGE = "";
 	public static String END_MESSAGE = "";
-	
 	public static String UNIT_MESSAGE = "";
 	public static String PRICE_MESSAGE = "";
 	public static String TOTAL_MESSAGE = "";
@@ -53,11 +58,16 @@ public class Constants {
 	public static String HEAD_OF_TOTAL_CSV = "";
 	public static String HEAD_OF_TOTAL_NOTICE = "";
 	public static String DATE_OF_TOTAL = "";
-
+	
 	// Language setup
 	void languageSelect() {
 		Locale currentLocale = Locale.getDefault();
 		ResourceBundle messages = ResourceBundle.getBundle("MessagesBundle", currentLocale);
+		PROGRAM_MESSAGE = messages.getString("PROGRAM_MESSAGE");
+		CHOSING_PROGRAM_MESSAGE = messages.getString("CHOSING_PROGRAM_MESSAGE");
+		CHOSING_PROGRAM_MESSAGE_RUN = messages.getString("CHOSING_PROGRAM_MESSAGE_RUN");
+		CHOSING_PROGRAM_MESSAGE_DATA = messages.getString("CHOSING_PROGRAM_MESSAGE_DATA");
+		CHOSING_PROGRAM_MESSAGE_OFF = messages.getString("CHOSING_PROGRAM_MESSAGE_OFF");
 		WELLCOME_MESSAGE = messages.getString("WELLCOME_MESSAGE");
 		CHOSING_TICKET_MESSAGE = messages.getString("CHOSING_TICKET_MESSAGE");
 		CHOSING_TICKET_MESSAGE_DAY = messages.getString("CHOSING_TICKET_MESSAGE_DAY");
@@ -77,7 +87,6 @@ public class Constants {
 		BUYING_MESSAGE_EXIT = messages.getString("BUYING_MESSAGE_EXIT");
 		CONTINUE_MESSAGE = messages.getString("CONTINUE_MESSAGE");
 		END_MESSAGE = messages.getString("END_MESSAGE");
-		
 		UNIT_MESSAGE = messages.getString("UNIT_MESSAGE");
 		PRICE_MESSAGE = messages.getString("PRICE_MESSAGE");
 		TOTAL_MESSAGE = messages.getString("TOTAL_MESSAGE");
