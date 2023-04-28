@@ -2,6 +2,15 @@
 
 public class PrintForInputs {
 	
+	void printChoiceProgram() {
+		System.out.println(Constants.PROGRAM_MESSAGE);
+		System.out.println(Constants.CHOSING_PROGRAM_MESSAGE);
+		System.out.println("1. " + Constants.CHOSING_PROGRAM_MESSAGE_RUN);
+		System.out.println("2. " + Constants.CHOSING_PROGRAM_MESSAGE_DATA);
+		System.out.println("3. " + Constants.CHOSING_PROGRAM_MESSAGE_OFF);
+	
+	}
+
 	void printChoiceTicket() {
 		System.out.println(Constants.WELLCOME_MESSAGE);
 		System.out.println(Constants.CHOSING_TICKET_MESSAGE);

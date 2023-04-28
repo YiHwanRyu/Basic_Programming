@@ -1,4 +1,3 @@
-import java.util.Locale;
 import java.util.Scanner;
 
 public class Inputs {
@@ -19,6 +18,16 @@ public class Inputs {
 	}
 	
 	// Methods of inputs
+	int inputWhichProgram(){
+		constants.languageSelect();
+		int number;
+		do {
+		printForInputs.printChoiceProgram();
+		number = scanner.nextInt();
+		} while (number != 1 && number != 2 && number !=3);
+		return number;
+	}
+	
 	int inputNumberChoiceTicket(){
 		int number;
 		do {
@@ -53,7 +62,6 @@ public class Inputs {
 	}
 	
 	void inputData() {
-		constants.languageSelect();
 		setNumberChoiceTicket(inputNumberChoiceTicket());
 		setPersonNumber(inputPersonNumber());
 		setTicketNumbers(inputTicketNumbers());
