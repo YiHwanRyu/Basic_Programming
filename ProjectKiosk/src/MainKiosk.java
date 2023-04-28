@@ -10,13 +10,19 @@ public class MainKiosk {
 		Inputs inputClass = new Inputs();
 		Outputs outputs = new Outputs();
 		RunKiosk runKiosk = new RunKiosk();
+		// Variable for Main class
+		int choiceOfProgram;
 		// Main logic
-		do {	
-			dataTotal = runKiosk.runOrder();	
-		} while (inputClass.inputIsExit() == Constants.NEW_ORDER);
+		while ((choiceOfProgram = inputClass.inputWhichProgram()) != Constants.EXIT_MACHINE) {
+			
+			if (choiceOfProgram == Constants.RUNORDER) {
+				dataTotal = runKiosk.runOrder();
+			} else if(choiceOfProgram == Constants.DATA_ANALYZE_AND_SAVE) {
+				outputs.printEndOfProgram(dataTotal);
+			}
+	
+		}
 		
-		//Total outputs
-		outputs.printEndOfProgram(dataTotal);
 	}
 
 }

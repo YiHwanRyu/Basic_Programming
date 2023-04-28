@@ -23,26 +23,29 @@ public class RunKiosk {
 	}
 	// runOrder
 	List<OrderList> runOrder() {
-		while (true) { 
-			//Inputs
-			inputClass.inputData();
+		do {
+			while (true) { 
+				//Inputs
+				inputClass.inputData();
 						
-			//Calculations
-			moneyOfRow = calculationsClass.calculation(inputClass);
-			moneyOfOrder += moneyOfRow;
+				//Calculations
+				moneyOfRow = calculationsClass.calculation(inputClass);
+				moneyOfOrder += moneyOfRow;
 						
-			//Save and outputs of row
-			data = saveOrderClass.saveOrdersData(data, moneyOfRow, inputClass);
+				//Save and outputs of row
+				data = saveOrderClass.saveOrdersData(data, moneyOfRow, inputClass);
 						
-			//Save data and Question about another order
-			if (inputClass.inputMoreChoiceTicket() == Constants.NO) {
-				dataTotal.addAll(outputClass.printResultOfOrder(data, moneyOfOrder));
-				break;
-			}		
-		}
-		//Initialization of data
-		data = new ArrayList<OrderList>();
-		moneyOfOrder = 0;	
+				//Save data and Question about another order
+				if (inputClass.inputMoreChoiceTicket() == Constants.NO) {
+					dataTotal.addAll(outputClass.printResultOfOrder(data, moneyOfOrder));
+					break;
+				}		
+			}
+			//Initialization of data
+			data = new ArrayList<OrderList>();
+			moneyOfOrder = 0;	
+		
+		} while (inputClass.inputIsExit() == Constants.NEW_ORDER);	
 		return dataTotal;
 	}
 }
